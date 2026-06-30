@@ -1,0 +1,111 @@
+body {
+    font-family: Consolas, monospace;
+    background: #0b1220;
+    color: #e5e7eb;
+    margin: 0;
+}
+
+/* HEADER */
+h1 {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    background: #0f172a;
+    border-bottom: 1px solid #1f2937;
+    letter-spacing: 1px;
+}
+
+/* GRID */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* CARDS */
+.box {
+    background: #111827;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #1f2937;
+    height: 420px;
+    overflow-y: auto;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+/* TITULOS */
+.box h2 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #1f2937;
+}
+
+/* CORES DOS PAINÉIS */
+.box:nth-child(1) h2 { color: #38bdf8; }
+.box:nth-child(2) h2 { color: #facc15; }
+.box:nth-child(3) h2 { color: #fb7185; }
+.box:nth-child(4) h2 { color: #a78bfa; }
+
+/* LOG TEXT */
+pre {
+    white-space: pre-wrap;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* 🔥 ALERTAS DESTACADOS */
+pre {
+    white-space: pre-wrap;
+}
+
+/* HIGH TRAFFIC */
+pre:contains("HIGH_TRAFFIC") {
+    color: #facc15;
+}
+
+/* HIGH LATENCY */
+pre:contains("HIGH_LATENCY") {
+    color: #fb923c;
+}
+
+/* HOST OFFLINE */
+pre:contains("HOST_OFFLINE") {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* SCROLL */
+.box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.box::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 10px;
+}
+
+.box::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+.alert-normal {
+    color: #9ca3af;
+}
+
+.alert-medium {
+    color: #facc15;
+    font-weight: bold;
+}
+
+.alert-high {
+    color: #fb923c;
+    font-weight: bold;
+}
+
+.alert-critical {
+    color: #ef4444;
+    font-weight: bold;
+}

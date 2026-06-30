@@ -1,0 +1,40 @@
+from agents.base_agent import BaseAgent
+
+from core.queues import decision_queue
+
+from services.logger import save
+
+from services.telegram_service import send
+
+
+class NotifierAgent(BaseAgent):
+
+    def run(self):
+
+        print("[NOTIFICADOR] Online")
+
+        while True:
+
+            data = decision_queue.get()
+
+            text = f"""
+
+🚨 ALERTA
+
+Host: {data['event'].host}
+
+Evento:
+
+{",".join(data['alerts'])}
+
+Severidade:
+
+{data['severity']}
+
+"""
+
+            print(text)
+
+            save(text)
+
+            send(text)

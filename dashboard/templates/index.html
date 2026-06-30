@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SMA NetGuard Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>SMA NetGuard Dashboard</h1>
+
+<div class="container">
+
+    <div class="box">
+        <h2>📡 Coletor</h2>
+        <pre>{{ collector_logs|join('') }}</pre>
+    </div>
+
+    <div class="box">
+        <h2>🧠 Analisador</h2>
+        <pre>{{ analyzer_logs|join('') }}</pre>
+    </div>
+
+    <div class="box">
+        <h2>⚖️ Decisor</h2>
+        <pre>{{ decision_logs|join('') }}</pre>
+    </div>
+
+    <div class="box">
+        <h2>🔔 Notificador</h2>
+        <pre>{{ notifier_logs|join('') }}</pre>
+    </div>
+
+</div>
+
+</body>
+</html>
